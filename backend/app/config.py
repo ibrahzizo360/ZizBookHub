@@ -16,6 +16,7 @@ class Settings:
     ALGORITHM = "HS256"
     SECRET_KEY: str = os.getenv("SECRET_KEY")
     SENDGRID_API_KEY: str = os.getenv("SENDGRID_API_KEY")
+    FROM_EMAIL: str = os.getenv("FROM_EMAIL")
 
 
 

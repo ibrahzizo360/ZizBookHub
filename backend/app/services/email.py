@@ -2,16 +2,18 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
 import hashlib
-sg = sendgrid.SendGridAPIClient(api_key=os.getenv('SENDGRID_API_KEY'))
 import secrets
 import string
+from app.config import settings
+
+sg = sendgrid.SendGridAPIClient(api_key=settings.SENDGRID_API_KEY)
 
 def generate_verification_code(length=8):
     digit = string.digits
     return ''.join(secrets.choice(digit) for i in range(length))
 
 
-from_email = Email("ibrahimaziz200000@gmail.com") 
+from_email = Email(settings.FROM_EMAIL) 
 
 
 
