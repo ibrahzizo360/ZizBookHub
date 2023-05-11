@@ -2,15 +2,15 @@
 Book management system web application built with React and FastAPI. Allows users to add and view books, and manage book content and cover images. Uses PostgreSQL database for data storage
 
 **Features**
--Authentication using JWT
--Email validation
--Add books to the system
--Upload and manage book content and cover images 
--View list of books
--Edit book details
--Delete books from the system
+* Authentication using JWT
+* Email validation
+* Add books to the system
+* Upload and manage book content and cover images 
+* View list of books
+* Edit book details
+* Delete books from the system
 
-**Below is a link of my deployed web application:**
+**This is a link of my deployed web application:**
 https://[bms-app.onrender.app](https://bms-client.onrender.com/)
 
 
