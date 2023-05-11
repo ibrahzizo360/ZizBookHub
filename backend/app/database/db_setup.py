@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker,scoped_session
-from config import settings
+from app.config import settings
 from sqlmodel import SQLModel
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30

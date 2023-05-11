@@ -3,7 +3,7 @@ from typing import Optional
 from jose import jwt
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from config import settings
+from app.config import settings
 
 
 class JWTRepo:

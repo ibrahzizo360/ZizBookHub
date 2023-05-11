@@ -1,7 +1,7 @@
-from typing import List, Optional
-from sqlalchemy import Column, String , BLOB
-from sqlmodel import SQLModel, Field, Relationship
-from models.mixins import TimeMixin
+from typing import  Optional
+from sqlalchemy import Column, String 
+from sqlmodel import SQLModel, Field
+from app.models.mixins import TimeMixin
 from datetime import date
 
 

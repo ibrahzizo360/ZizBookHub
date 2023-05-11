@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from database.db_setup import create_database
+from app.database.db_setup import create_database
 
 
 
@@ -31,7 +31,7 @@ def init_app():
     def startup():
         create_database()
         
-    from controller import authentication, users, books
+    from app.controller import authentication, users, books
 
     app.include_router(authentication.router)
     app.include_router(users.router)

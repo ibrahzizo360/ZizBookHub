@@ -1,6 +1,6 @@
-from database.db_setup import db
-from models.books import Books
-from repositories.auth_repo import  JWTRepo
+from app.database.db_setup import db
+from app.models.books import Books
+from app.repositories.auth_repo import  JWTRepo
 
 
 

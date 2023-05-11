@@ -3,13 +3,13 @@ from datetime import datetime
 from uuid import uuid4
 from fastapi import HTTPException
 from passlib.context import CryptContext
-from schemas import RegisterSchema
-from models.users import  Users
-from models.person import Person
-from repositories.users_repo import UsersRepository
-from schemas import LoginSchema, ForgotPasswordSchema
-from repositories.auth_repo import JWTRepo
-from database.db_setup import db
+from app.schemas import RegisterSchema
+from app.models.users import  Users
+from app.models.person import Person
+from app.repositories.users_repo import UsersRepository
+from app.schemas import LoginSchema, ForgotPasswordSchema
+from app.repositories.auth_repo import JWTRepo
+from app.database.db_setup import db
 
 # Encrypt password
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

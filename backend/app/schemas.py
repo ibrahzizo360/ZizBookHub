@@ -5,7 +5,7 @@ import re
 from typing import TypeVar, Optional
 from pydantic import BaseModel, validator
 from sqlalchemy import false
-from models.person import Sex
+from app.models.person import Sex
 
 
 T = TypeVar('T')

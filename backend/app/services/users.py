@@ -1,6 +1,6 @@
 from sqlalchemy.future import select
-from models import Users, Person
-from database.db_setup import db 
+from app.models import Users, Person
+from app.database.db_setup import db 
 
 
 class UserService:

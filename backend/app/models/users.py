@@ -1,7 +1,7 @@
 from typing import  Optional
 from sqlalchemy import Column, String
 from sqlmodel import SQLModel, Field, Relationship
-from models.mixins import TimeMixin
+from app.models.mixins import TimeMixin
 
 
 class Users(SQLModel,TimeMixin,table=True):

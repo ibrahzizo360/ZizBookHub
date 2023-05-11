@@ -1,9 +1,9 @@
 from fastapi import APIRouter,Response
-from services.auth_services import AuthService
-from schemas import ResponseSchema, RegisterSchema, LoginSchema, ForgotPasswordSchema
-from repositories.users_repo import UsersRepository
-from services.email import send_verification_code
-from schemas import EmailVerificationSchema
+from app.services.auth_services import AuthService
+from app.schemas import ResponseSchema, RegisterSchema, LoginSchema, ForgotPasswordSchema
+from app.repositories.users_repo import UsersRepository
+from app.services.email import send_verification_code
+from app.schemas import EmailVerificationSchema
 from fastapi import APIRouter,HTTPException
 import hashlib
 import json

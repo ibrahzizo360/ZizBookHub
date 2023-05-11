@@ -1,6 +1,6 @@
 
-from models.users import Users
-from database.db_setup import db
+from app.models.users import Users
+from app.database.db_setup import db
 from fastapi import HTTPException
 
 

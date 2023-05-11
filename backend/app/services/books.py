@@ -1,8 +1,8 @@
 import base64
 from datetime import datetime
 from uuid import uuid4
-from repositories.books_repo import *
-from database.db_setup import db
+from app.repositories.books_repo import *
+from app.database.db_setup import db
 import random
 from fastapi import Security
 

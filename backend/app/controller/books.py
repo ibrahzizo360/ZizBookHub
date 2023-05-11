@@ -1,8 +1,8 @@
 from fastapi import APIRouter,Request,File,UploadFile,Form
 from fastapi.responses import FileResponse
-from schemas import ResponseSchema, BookSchema
-from services.books import BookService
-from repositories.books_repo import BooksRepository
+from app.schemas import ResponseSchema, BookSchema
+from app.services.books import BookService
+from app.repositories.books_repo import BooksRepository
 import os
 
 router = APIRouter(

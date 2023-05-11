@@ -1,9 +1,9 @@
 
 from datetime import date
 from typing import Optional
-from sqlalchemy import Enum, table
+from sqlalchemy import Enum
 from sqlmodel import SQLModel, Field, Relationship
-from models.mixins import TimeMixin
+from app.models.mixins import TimeMixin
 
 
 

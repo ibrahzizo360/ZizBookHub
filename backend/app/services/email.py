@@ -1,7 +1,6 @@
 import sendgrid
 import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
-from random import randint
 import hashlib
 sg = sendgrid.SendGridAPIClient(api_key=os.getenv('SENDGRID_API_KEY'))
 import secrets
