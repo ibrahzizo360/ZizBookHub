@@ -13,6 +13,11 @@ Book management system web application built with React and FastAPI. Allows user
 **This is a link of my deployed web application:**
 https://[bms-app.onrender.app](https://bms-client.onrender.com/)
 
+**What I have below is a link to the Swagger documentation for my backend API:**
+* https://bmsserver.up.railway.app/docs
+* Swagger provides a user-friendly interface for exploring and interacting with the API endpoints. This documentation is useful for developers who want to understand how to use the API and for testing and troubleshooting purposes.
+
+
 
 # How to run
 To run this project locally, you will need to have Node.js and Python installed on your machine. You will also need to have a PostgreSQL server running.
