@@ -14,4 +14,5 @@ sendgrid==6.10.0
 SQLAlchemy==1.4.41
 sqlmodel==0.0.8
 uvicorn
+python-multipart
 
