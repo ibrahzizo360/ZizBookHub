@@ -27,12 +27,13 @@ To run this project locally, you will need to have Node.js and Python installed 
 2. run npm start
 
 **How to run backend(Fastapi)**
-* Before running, cd into backend/app and create a file named ".env". It should contain the appropriate variables by relating to the config.py file.
+* Before running, cd into backend and create a file named ".env". It should contain the appropriate variables by relating to the config.py file.
 * Also, the email delivery service platform I used is SENDGRID. Therefore in order to set this up one must visit sendgrid.com, create an account and create and api key.
 
-1. In the backend directory, run this command ".\venv\Scripts\activate" Inorder to activate your virtual environment
-2. run pip install -r requirements.txt
-3. run uvicorn app.main:app --reload
+1. In the backend directory, create a virtual environment called venv by running "python -m venv venv"
+2. run this command ".\venv\Scripts\activate" Inorder to activate your virtual environment
+3. run pip install -r requirements.txt
+4. run uvicorn app.main:app --reload
 
 # Contributions
 Contributions are welcome! If you find a bug or would like to suggest a new feature, please open an issue. If you would like to contribute code, please fork the repository and submit a pull request.
