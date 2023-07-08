@@ -1,2 +1,6 @@
 # Ignore the .env file which contains sensitive information such as API keys, passwords, and database credentials.
 .env
+
+app/__pycache__/
+
+app/*/__pycache__/

@@ -27,7 +27,7 @@ class AuthService:
         birth_date = datetime.strptime(register.birth, '%d-%m-%Y')
 
         # open image profile default to bas64 string
-        with open("./media/profile.png", "rb") as f:
+        with open("./app/media/profile.png", "rb") as f:
             image_str = base64.b64encode(f.read())
         image_str = "data:image/png;base64," + image_str.decode('utf-8')
 
