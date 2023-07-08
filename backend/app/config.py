@@ -12,7 +12,7 @@ class Settings:
     POSTGRES_SERVER: str = os.getenv("POSTGRES_SERVER", "localhost")
     POSTGRES_PORT: str = os.getenv("POSTGRES_PORT", 5432)
     POSTGRES_DB: str = os.getenv("POSTGRES_DB", "postgres")
-    DATABASE_URL = f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
+    DATABASE_URL = os.getenv('DB_URL')
     ALGORITHM = "HS256"
     SECRET_KEY: str = os.getenv("SECRET_KEY")
     SENDGRID_API_KEY: str = os.getenv("SENDGRID_API_KEY")
