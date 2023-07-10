@@ -3,11 +3,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
-import closeImage from "../assets/close.png";
 
 
 
-export default function UpdateBookForm(props:any) {
+
+export default function UpdateBook(props:any) {
   const [UpdateBookForm, setUpdateBookForm] = useState({
     title: props.book.title || "",
     author: props.book.author  || "",
@@ -75,7 +75,7 @@ export default function UpdateBookForm(props:any) {
           onClick={props.handleCloseUpdateForm}
           className="absolute right-0 z-50 p-2 w-12 h-12 "
         >
-          <img src={closeImage} alt="close button" />
+          {/* <img src={"closeImage"} alt="close button" /> */}
         </button>
       
         <div className="flex items-center justify-center">

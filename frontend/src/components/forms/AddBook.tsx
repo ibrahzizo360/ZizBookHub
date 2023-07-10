@@ -3,10 +3,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
+import { REGISTERBOOK } from "../../utils/book";
 
 
 
-export default function AddBookForm(props:any) {
+export default function AddBook(props:any) {
     const [bookContentFile, setBookContentFile] = useState("");
     const [bookCoverFile, setBookCoverFile] = useState("");
     const [addBookForm, setAddBookForm] = useState({
@@ -15,6 +16,7 @@ export default function AddBookForm(props:any) {
         genre: "",
         date_published: "",
       });
+    const [loading, setLoading] = useState(false);  
     const [bookDate, setBookDate] = useState(null);
     const formatDate = (date: string) => {
         let d = new Date(date),
@@ -63,35 +65,24 @@ export default function AddBookForm(props:any) {
             event.preventDefault();
             console.log(addBookForm);
             // Post to register API
-            axios
-              .post(`http://localhost:8000/books/`, formData, { withCredentials: true ,headers: {
-                "Content-Type": "multipart/form-data",
-              }, })
-              .then((response : any ) => {
-        
-                // add successfully notif
-                toast.success(response.data.detail);
-                // reload page
-                setTimeout(() => {
-                  window.location.reload();
-                }, 1000);
-        
-                console.log(response);
-              })
-              .catch((error:any) => {
-                console.log(error);
-                // add error notif
-                toast.error(error.response.data.detail);
-              });
+            setLoading(true);
+            toast.promise(
+              REGISTERBOOK(formData, () => {
+                toast.success("Book Created sucessfully", { toastId: "signinToast" });
+              }),
+              {
+                pending: "Adding Book...",
+              },
+              {
+                toastId: "signinToast",
+                position: "top-right",
+              }
+          );
+            setLoading(false);
           };
-        return (
+          return (
             <div>
-    <div className="container mx-auto p-4 flex flex-row">
-  <button className="flex justify-start bg-sky-500 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded" 
-  onClick={ ()=>{props.setPage("Dashboard")}}>Dashboard</button>
-  <button className="ml-auto bg-sky-500 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded" 
-  onClick={ ()=>{props.setPage("Table")}}>View Books</button>
-</div>
+
     <div className="flex items-center justify-center ">
   <div className="py-12 px-6 md:px-24 bg-white rounded-2xl shadow-xl z-20 w-full md:w-[728px]">
 

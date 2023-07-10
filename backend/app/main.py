@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database.db_setup import create_database
-
+from app.controller import authentication, users, books
 
 
 
@@ -20,7 +20,7 @@ def init_app():
 
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"]
@@ -31,7 +31,7 @@ def init_app():
     def startup():
         create_database()
         
-    from app.controller import authentication, users, books
+    
 
     app.include_router(authentication.router)
     app.include_router(users.router)
@@ -42,7 +42,9 @@ def init_app():
 app = init_app()
 
 
-
+@app.get('/')
+def root():
+    return "hello"
 
     
     

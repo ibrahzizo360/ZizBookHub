@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import UpdateBookForm from "../../../form/UpdateBookForm";
+import UpdateBook from "../components/forms/UpdateBook";
 
 
 interface FileLinkProps {
@@ -21,22 +21,14 @@ function FileLink({fileUrl}: FileLinkProps ) {
   );
 }
 
-export default function Table(props:any) {
+export default function Books(props:any) {
     const [books, setBooks] : any = useState([]);
     const [showUpdateForm, setShowUpdateForm]: any = useState(false);
     const [book, setBook] : any = useState({});
 
     useEffect(() => {
-        // get token from local storage
-        const auth_token = localStorage.getItem("auth_token");
-        const auth_token_type = localStorage.getItem("auth_token_type");
-        const token = auth_token_type + " " + auth_token;
-    
-        //  fetch books from get user api
         axios
-          .get("http://localhost:8000/books/", {
-            headers: { Authorization: token },
-          })
+          .get("http://localhost:8000/books/")
           .then((response) => {
             console.log(response);
             setBooks(response.data.result)
@@ -64,13 +56,8 @@ export default function Table(props:any) {
   
       
       return( <div className="">
-        <div className="container  p-4 flex flex-row">
-        <button className="flex justify-start bg-sky-500 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded" 
-        onClick={ ()=>{props.setPage("Dashboard")}}>Dashboard</button>
-        <button className="ml-auto bg-sky-500 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded" 
-        onClick={ ()=>{props.setPage("AddBookForm")}}>Add Book</button>
-      </div>
-        <div className="overflow-x-auto py-12 px-12 min-h-screen">
+        
+    <div className="overflow-x-auto py-12 px-12 min-h-screen">
     <div className="min-w-max flex justify-center ">
       <table className="table-auto border shadow-md rounded-lg ">
         <thead className="bg-gray-200">
@@ -107,7 +94,7 @@ export default function Table(props:any) {
       </table>
       {showUpdateForm && (
         <div className="update-book-form-popup">
-          <UpdateBookForm book={book}
+          <UpdateBook book={book}
           handleCloseUpdateForm={handleCloseUpdateForm}
            />
         </div>

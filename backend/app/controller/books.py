@@ -50,7 +50,7 @@ async def update_book(bookId, request_body: BookSchema):
 
 @router.get("/{name_file}")
 def get_file(name_file: str):
-    return FileResponse(path=os.getcwd()+ "/book_files/bookfile_uploads/" + name_file)
+    return FileResponse(path=os.getcwd()+ "app/book_files/bookfile_uploads/" + name_file)
 
 @router.get("/book/{bookId}")
 async def get_book_by_id(bookId):

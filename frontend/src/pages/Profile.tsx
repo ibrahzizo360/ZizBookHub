@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export default function Dashboard(props:any) {
+export default function Profile(props:any) {
   const [user, setUser] : any = useState({});
 
   useEffect(() => {

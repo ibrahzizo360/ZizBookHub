@@ -22,10 +22,10 @@ class BookService:
         date_published
     ):
         # writing files to disk
-        bookcontent_file_location = f"book_files/bookfile_uploads/{bookcontent_file.filename}"
+        bookcontent_file_location = f"app/book_files/bookfile_uploads/{bookcontent_file.filename}"
         with open(bookcontent_file_location, "wb+") as file_object:
             file_object.write(bookcontent_file.file.read())
-        bookcover_file_location = f"book_files/bookcover_uploads/{bookcover_file.filename}"    
+        bookcover_file_location = f"app/book_files/bookcover_uploads/{bookcover_file.filename}"    
         with open(bookcover_file_location, "wb+") as file_object:
             file_object.write(bookcover_file.file.read()) 
             
@@ -60,4 +60,5 @@ class BookService:
     def update_book(id,book) :
         db.query(Books).filter(Books.id == id).update({"title": book.title, "author": book.author, "genre": book.genre, "date_published": book.date_published})
         db.commit()
-    
+      
+  

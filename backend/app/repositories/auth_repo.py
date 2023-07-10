@@ -28,12 +28,18 @@ class JWTRepo:
             decode_token = jwt.decode(
                 self.token,  settings.SECRET_KEY, algorithms=settings.ALGORITHM)
             return decode_token if decode_token["expires"] >= datetime.time() else None
-        except:
-            return {}
+        except :
+            raise HTTPException(
+                    status_code=403, detail={"status": "Forbidden", "message": "Not Authorized"})
 
     @staticmethod
     def extract_token(token):
-        return jwt.decode(token,  settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        try:
+            return jwt.decode(token,  settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        except:
+            raise HTTPException(
+                    status_code=403, detail={"status": "Forbidden", "message": "Not Authorized"})
+            
 
 
 class JWTBearer(HTTPBearer):
