@@ -1,4 +1,7 @@
-# BookManagementSystem
+
+# Project currently undergoing reconstruction 🚧.....
+
+<!-- # BookManagementSystem
 Book management system web application built with React and FastAPI. Allows users to add and view books, and manage book content and cover images. Uses PostgreSQL database for data storage
 
 **Features**
@@ -37,4 +40,4 @@ To run this project locally, you will need to have Node.js and Python installed 
 
 # Contributions
 Contributions are welcome! If you find a bug or would like to suggest a new feature, please open an issue. If you would like to contribute code, please fork the repository and submit a pull request.
-
+ -->
