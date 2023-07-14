@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <React.Fragment>
 
-      <Tabs isFitted variant='enclosed'>
+      <Tabs isFitted variant='unstyled'>
         <TabList mb='1em'>
-          <Tab>Available books</Tab>
-          <Tab>Add books</Tab>
+          <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Available books</Tab>
+          <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Add books</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
